@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">livia1-SizeBook</string>
-    <string name="edit_message">Enter a message</string>
+    <string name="Welcome">Welcome to livia1-SizeBook. Would you like to make a new entry or look at an old entry?</string>
     <string name="button_enter">Enter</string>
+    <string name="button_New">New</string>
+    <string name="button_Old">Old</string>
+    <string name="edit_name">Please enter a name</string>
+    <string name="edit_date">Please enter a date</string>
+    <string name="edit_neck">Neck (circumference in inches, numeric)</string>
+    <string name="edit_bust">Bust (circumference in inches, numeric)"</string>
+    <string name="edit_chest">Chest (circumference in inches, numeric)</string>
+    <string name="edit_waist">Waist (circumference in inches, numeric)</string>
+    <string name="edit_hip">Hip (circumference in inches, numeric)</string>
+    <string name="edit_inseam">Inseam (length in inches, numeric)</string>
+    <string name="edit_comment">Comment (textual)</string>
 </resources>
