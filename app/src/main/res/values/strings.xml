@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">livia1-SizeBook</string>
     <string name="Welcome">Welcome to livia1-SizeBook. Would you like to make a new entry or look at an old entry?</string>
-    <string name="button_enter">Enter</string>
+    <string name="button_Enter">Enter</string>
     <string name="button_New">New</string>
     <string name="button_Old">Old</string>
     <string name="edit_name">Please enter a name</string>

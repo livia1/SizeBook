@@ -13,21 +13,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_screen);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
     }
     public void goToNew(View view) {
-        //setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        startActivity(intent);
+        Intent newEntriesMenu = new Intent(this, NewEntries.class);
+        startActivity(newEntriesMenu);
     }
 
-    /** Called when the user clicks the Send button */
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_name);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+    public void goToOld(View view){
+        Intent oldEntriesMenu = new Intent(this, OldEntries.class);
+        startActivity(oldEntriesMenu);
     }
 }
+
