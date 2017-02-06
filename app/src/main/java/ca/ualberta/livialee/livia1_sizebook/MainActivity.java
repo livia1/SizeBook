@@ -48,7 +48,9 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        /**
+         * Assigning variables to EditTexts
+         */
         editName = (EditText) findViewById(R.id.edit_name);
         editDate = (EditText) findViewById(R.id.edit_date);
         editNeck = (EditText) findViewById(R.id.edit_neck);
@@ -82,7 +84,10 @@ public class MainActivity extends Activity {
                 editComment.setText(humanEdit.getComment());
             }});
 
-        // Use a long click to delete items
+        /** Use a long click to delete items passes the position the item
+         *  was clicked to personList.remove() and removes the entire entry
+         *  then updates the adapter and the counter
+         */
         previousEntries.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
 
             public boolean onItemLongClick(AdapterView<?> parent, View view, int pos, long id)
@@ -113,16 +118,12 @@ public class MainActivity extends Activity {
                 if (!Name.equals("")) {
                     Person one = new Person(Name, Date, Neck, Bust, Chest, Waist, Hip, Inseam, Comment);
 
-                    // Use a for loop if Name is equal to a previous Name entered, update it
+                    // Adds the entry to the array personList
                     personList.add(one);
 
-                    int size = personList.size();
-                    //should either be the correct number if it's not an edit
-                    // should be 1 more if it is an edit
-                    int last = size - 1;
-                    String sizeString = Integer.toString(size);
-
-                    //updates the entry
+                    /** Use a for loop if Name is equal to a previous Name entered
+                     *  updates the variables. The loop doesn't compare the newest entry
+                     */
                     for(int i=0; i < personList.size()-1; i++){
                         if (personList.get(i).getName().equals(Name) && personList.size() > 1){
                             personList.get(i).setDate(Date);
@@ -141,10 +142,13 @@ public class MainActivity extends Activity {
                         }
                     }
 
+                    // Updates the counter
                     counter.setText(Integer.toString(personList.size()));
                     adapter.notifyDataSetChanged();
                     saveInFile();
 
+
+                    // Deletes all text in the EditText boxes
                     editName.setText("");
                     editDate.setText("");
                     editNeck.setText("");
@@ -168,6 +172,7 @@ public class MainActivity extends Activity {
 
 
         loadFromFile();
+        // Loads the counter onStart
         counter.setText(Integer.toString(personList.size()));
 
         adapter = new ArrayAdapter<Person>(this, R.layout.list_item, personList);
