@@ -116,14 +116,13 @@ public class MainActivity extends Activity {
                     personList.add(one);
 
                     int size = personList.size();
-                    //int last = size - 1;
+                    //should either be the correct number if it's not an edit
+                    // should be 1 more if it is an edit
+                    int last = size - 1;
                     String sizeString = Integer.toString(size);
-                    //counter.setText(sizeString);
-                    //System.out.println(last);
 
                     for(int i=0; i < size; i++){
-                        System.out.println(String.format("%d, %d",i, size));
-                        if (personList.get(i).getName().equals(Name)){
+                        if (personList.get(i).getName().equals(Name) && size > 1){
                             personList.get(i).setDate(Date);
                             personList.get(i).setNeck(Neck);
                             personList.get(i).setBust(Bust);
@@ -134,14 +133,11 @@ public class MainActivity extends Activity {
                             personList.get(i).setComment(Comment);
                             adapter.notifyDataSetChanged();
 
-                            //personList.remove(0);
                             saveInFile();
                         }
                     }
 
                     counter.setText(sizeString);
-                    //System.out.println(last);
-
                     adapter.notifyDataSetChanged();
                     saveInFile();
 
