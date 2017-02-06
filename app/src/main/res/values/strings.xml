@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="save">Save</string>                      <!--Dont need this one?-->
     <string name="app_name">livia1-SizeBook</string>
-    <string name="Welcome">Welcome to livia1-SizeBook. Would you like to make a new entry or look at an old entry?</string>
-    <string name="button_Enter">Enter</string>
     <string name="button_New">New</string>
-    <string name="button_Old">Old</string>
     <string name="edit_name">Please enter a name</string>
-    <string name="edit_date">Please enter a date</string>
-    <string name="edit_neck">Neck (circumference in inches, numeric)</string>
-    <string name="edit_bust">Bust (circumference in inches, numeric)"</string>
-    <string name="edit_chest">Chest (circumference in inches, numeric)</string>
-    <string name="edit_waist">Waist (circumference in inches, numeric)</string>
-    <string name="edit_hip">Hip (circumference in inches, numeric)</string>
-    <string name="edit_inseam">Inseam (length in inches, numeric)</string>
-    <string name="edit_comment">Comment (textual)</string>
+    <string name="edit_date">Date yyyy-mm-dd</string>
+    <string name="edit_neck">Neck (inches)</string>
+    <string name="edit_bust">Bust (inches)"</string>
+    <string name="edit_chest">Chest (inches)</string>
+    <string name="edit_waist">Waist (inches)</string>
+    <string name="edit_hip">Hip (inches)</string>
+    <string name="edit_inseam">Inseam (inches)</string>
+    <string name="edit_comment">Comments</string>
+    <string name="records">Number of records: </string>
+
 </resources>
