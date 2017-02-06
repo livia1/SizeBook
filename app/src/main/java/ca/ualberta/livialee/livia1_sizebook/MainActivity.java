@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
                     String sizeString = Integer.toString(size);
 
                     //updates the entry
-                    for(int i=0; i < personList.size(); i++){
+                    for(int i=0; i < personList.size()-1; i++){
                         if (personList.get(i).getName().equals(Name) && personList.size() > 1){
                             personList.get(i).setDate(Date);
                             personList.get(i).setNeck(Neck);
@@ -133,6 +133,7 @@ public class MainActivity extends Activity {
                             personList.get(i).setHip(Hip);
                             personList.get(i).setInseam(Inseam);
                             personList.get(i).setComment(Comment);
+
                             personList.remove(personList.size()-1);
                             adapter.notifyDataSetChanged();
 
@@ -140,7 +141,7 @@ public class MainActivity extends Activity {
                         }
                     }
 
-                    counter.setText(sizeString);
+                    counter.setText(Integer.toString(personList.size()));
                     adapter.notifyDataSetChanged();
                     saveInFile();
 
