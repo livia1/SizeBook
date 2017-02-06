@@ -65,10 +65,11 @@ public class MainActivity extends Activity {
 
         counter = (TextView) findViewById(R.id.count);
 
-        // Click on item - retrieves the data and places it in the textViews
+        // Click on item - retrieves the data and places it in the editViews
         previousEntries.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                //Loading all values into the editViews
                 Person humanEdit = personList.get(position);
                 editName.setText(humanEdit.getName());
                 editDate.setText(humanEdit.getDate());
@@ -121,8 +122,9 @@ public class MainActivity extends Activity {
                     int last = size - 1;
                     String sizeString = Integer.toString(size);
 
-                    for(int i=0; i < size; i++){
-                        if (personList.get(i).getName().equals(Name) && size > 1){
+                    //updates the entry
+                    for(int i=0; i < personList.size(); i++){
+                        if (personList.get(i).getName().equals(Name) && personList.size() > 1){
                             personList.get(i).setDate(Date);
                             personList.get(i).setNeck(Neck);
                             personList.get(i).setBust(Bust);
@@ -131,6 +133,7 @@ public class MainActivity extends Activity {
                             personList.get(i).setHip(Hip);
                             personList.get(i).setInseam(Inseam);
                             personList.get(i).setComment(Comment);
+                            personList.remove(personList.size()-1);
                             adapter.notifyDataSetChanged();
 
                             saveInFile();
